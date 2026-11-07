@@ -1,0 +1,72 @@
+/* Phiên 08 · JavaFX looked-up colors propagate to every control skin. */
+.root, .dialog-pane {
+    -ink-950: #0a111a; -ink-900: #101b26; -ink-800: #172633; -ink-700: #203641;
+    -slate-500: #526975; -slate-300: #adc0c7; -paper-50: #f3f6f2;
+    -mint-300: #91e4b7; -mint-400: #72cfa1; -coral-300: #ffb3a2;
+    -canvas: -ink-950; -surface: -ink-900; -raised: -ink-800; -edge: -slate-500;
+    -text: -paper-50; -subtle: -slate-300; -action: -mint-300; -attention: -coral-300;
+    -button-fill: -raised; -button-primary: -action; -quote-fill: -ink-700; -field-fill: -canvas;
+    -sand-200: #eacf9f; -ornament: -sand-200; -badge-fill: -raised; -picture-fill: -surface;
+    -fx-base: -surface; -fx-background: -canvas; -fx-control-inner-background: -surface;
+    -fx-accent: -action; -fx-focus-color: -action; -fx-faint-focus-color: transparent;
+    -fx-text-background-color: -text; -fx-text-base-color: -text; -fx-text-fill: -text;
+    -fx-background-color: -canvas; -fx-font-family: "Segoe UI"; -fx-font-size: 14px;
+}
+.label, .check-box, .choice-box, .combo-box, .list-cell, .table-cell { -fx-text-fill: -text; }
+.cover { -fx-padding: 44; -fx-background-color: -surface; }
+.cover-print { -fx-background-image: url("../gallery/electronics.png"); -fx-background-size: contain; -fx-background-position: left center; -fx-background-repeat: no-repeat; }
+.stat-chip { -fx-background-color: -badge-fill; -fx-text-fill: -text; -fx-background-radius: 4; -fx-padding: 5 10; -fx-font-size: 12px; }
+.picture-mat { -fx-background-color: -picture-fill; -fx-border-color: -raised; }
+.deadline { -fx-text-fill: -ornament; -fx-font-size: 18px; -fx-font-weight: bold; }
+.button.suggestion { -fx-text-fill: -action; -fx-padding: 4 8; -fx-font-size: 12px; }
+.button.following { -fx-text-fill: -action; }
+.wordmark { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.eyebrow { -fx-text-fill: -action; -fx-font-weight: bold; -fx-font-size: 12px; }
+.folio, .muted, .subtitle { -fx-text-fill: -subtle; }
+.folio { -fx-font-size: 12px; }
+.subtitle { -fx-font-size: 18px; }
+.display, .section-title, .price { -fx-font-family: "Serif"; -fx-text-fill: -text; }
+.display { -fx-font-size: 66px; }
+.section-title { -fx-font-size: 34px; }
+.price { -fx-font-size: 30px; }
+.heading { -fx-font-size: 17px; -fx-font-weight: bold; }
+.grid-art { -fx-stroke: -edge; -fx-fill: transparent; }
+.curve-art { -fx-fill: transparent; -fx-stroke: -action; -fx-stroke-width: 2.5; }
+.dot-art { -fx-fill: -action; }
+.auth { -fx-padding: 78 44 32 44; -fx-background-color: -canvas; }
+.masthead { -fx-padding: 16 24; -fx-background-color: -surface; }
+.catalog, .detail { -fx-padding: 24; -fx-background-color: -canvas; }
+.quote { -fx-padding: 16 20; -fx-background-color: -quote-fill; -fx-background-radius: 8; }
+.button, .choice-box, .combo-box { -fx-background-color: -button-fill; -fx-text-fill: -text; -fx-padding: 8 12; -fx-background-radius: 5; -fx-cursor: hand; }
+.button:hover, .choice-box:hover, .combo-box:hover { -fx-background-color: -quote-fill; }
+.button:pressed { -fx-background-color: -surface; }
+.button.primary { -fx-background-color: -button-primary; -fx-text-fill: -canvas; -fx-font-weight: bold; }
+.button.primary:hover, .button.primary:pressed { -fx-background-color: -mint-400; }
+.button.link-button { -fx-text-fill: -action; -fx-background-color: transparent; }
+.text-input { -fx-text-fill: -text; -fx-prompt-text-fill: -subtle; -fx-background-color: -field-fill; -fx-border-color: -edge; -fx-border-radius: 5; -fx-padding: 8 10; }
+.text-input:focused, .button:focused, .combo-box:focused, .choice-box:focused, .check-box:focused, .table-view:focused, .list-view:focused {
+    -fx-border-color: -action; -fx-border-radius: 5; -fx-border-width: 1;
+}
+.button:disabled { -fx-opacity: 0.55; }
+.table-view, .list-view { -fx-background-color: -surface; -fx-border-color: -raised; }
+.table-row-cell, .list-cell { -fx-background-color: -surface; }
+.table-row-cell:odd, .list-cell:odd { -fx-background-color: -raised; }
+.table-row-cell:empty, .list-cell:empty { -fx-background-color: -surface; }
+.table-row-cell:selected, .list-cell:selected { -fx-background-color: -quote-fill; }
+.table-row-cell:selected .table-cell { -fx-text-fill: -action; }
+.table-row-cell { -fx-cell-size: 42px; }
+.table-view .column-header, .table-view .filler { -fx-background-color: -raised; -fx-size: 38px; }
+.table-cell { -fx-alignment: center-left; -fx-padding: 0 6; -fx-border-color: transparent; }
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: -canvas; }
+.split-pane { -fx-background-color: -canvas; -fx-padding: 0; }
+.split-pane-divider { -fx-background-color: -raised; -fx-padding: 0 1; }
+.titled-pane > .title { -fx-background-color: -raised; }
+.titled-pane > .content { -fx-background-color: -surface; -fx-border-color: -raised; }
+.chart-plot-background { -fx-background-color: -surface; }
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines { -fx-stroke: -raised; }
+.chart-series-line { -fx-stroke: -action; -fx-stroke-width: 2px; }
+.chart-line-symbol { -fx-background-color: -action; -fx-padding: 3px; }
+.axis { -fx-tick-label-fill: -subtle; }
+.statusbar { -fx-background-color: -surface; -fx-padding: 10 24; -fx-text-fill: -subtle; }
+.feedback { -fx-text-fill: -attention; }
+.dialog-pane { -fx-padding: 16; }

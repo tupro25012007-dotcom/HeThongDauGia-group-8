@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.Group?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.controller.LoginController" styleClass="entry">
+  <VBox HBox.hgrow="ALWAYS" prefWidth="560" minWidth="390" styleClass="cover" spacing="20">
+    <Label text="PHIÊN   /   08" styleClass="wordmark"/>
+    <Region VBox.vgrow="ALWAYS"/>
+    <Label text="PHIÊN 08      /      BỘ SƯU TẬP" styleClass="eyebrow"/>
+    <Label text="Phòng đấu" styleClass="display"/>
+    <Label text="Theo dõi từng lượt trả giá và thời điểm chốt phiên." wrapText="true" styleClass="subtitle"/>
+    <Region styleClass="cover-print" minHeight="160" prefHeight="235" maxHeight="260" accessibleText="Tranh minh họa máy ảnh cơ, bộ sưu tập Phiên 08"/>
+    <Label text="PL. 01     /     NGHIÊN CỨU QUANG HỌC" styleClass="folio"/>
+    <Region VBox.vgrow="ALWAYS"/>
+    <Label text="NHÓM 08     /     UET" styleClass="folio"/>
+  </VBox>
+  <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS" prefWidth="490" minWidth="395" styleClass="auth-scroll">
+    <VBox spacing="12" styleClass="auth">
+      <Label text="TÀI KHOẢN" styleClass="eyebrow"/>
+      <Label fx:id="title" text="Đăng nhập" styleClass="section-title"/>
+      <Label text="Tên tài khoản" labelFor="$name"/><TextField fx:id="name" promptText="Tên đăng nhập"/>
+      <Label text="Mật khẩu" labelFor="$password"/><PasswordField fx:id="password" promptText="Nhập mật khẩu" onAction="#connect"/>
+      <VBox fx:id="roleBox" spacing="8"><Label text="Vai trò" labelFor="$role"/><ChoiceBox fx:id="role" maxWidth="Infinity"/></VBox>
+      <Button fx:id="submit" text="Vào phòng đấu" onAction="#connect" styleClass="primary" maxWidth="Infinity" defaultButton="true"/>
+      <Button fx:id="mode" text="Chưa có tài khoản? Đăng ký" onAction="#switchMode" styleClass="link-button" maxWidth="Infinity"/>
+      <Button text="Xem video hướng dẫn" onAction="#guide" maxWidth="Infinity"/>
+      <TitledPane text="Cài đặt kết nối" expanded="false" animated="false">
+        <VBox spacing="8"><Label text="Máy chủ" labelFor="$host"/><TextField fx:id="host"/><Label text="Cổng" labelFor="$port"/><TextField fx:id="port"/></VBox>
+      </TitledPane>
+      <Label fx:id="feedback" wrapText="true" styleClass="feedback"/>
+    </VBox>
+  </ScrollPane>
+</HBox>

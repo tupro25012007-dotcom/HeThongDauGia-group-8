@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360">
+<defs><pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#243e45"/></pattern>
+<pattern id="engrave" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 4L4 0" fill="none" stroke="#243e45" stroke-width=".8"/></pattern></defs>
+<rect width="720" height="360" fill="#b9d4ce"/><rect x="22" y="20" width="676" height="320" fill="none" stroke="#243e45" opacity=".35"/>
+<circle cx="358" cy="180" r="123" fill="#eddfba"/><path d="M100 280L601 78V109L141 294H100Z" fill="url(#dots)" opacity=".6"/>
+<g transform="rotate(-7 360 183)" stroke="#243e45" stroke-linejoin="round"><path d="M206 138L225 119H310L326 91H388L407 116H491L509 132V239L490 254H212Z" fill="#67868a" stroke-width="4"/>
+<path d="M206 138H489V255H214Q205 255 205 245Z" fill="#29454d" stroke-width="4"/><path d="M206 138H489V166H206Z" fill="#e2d9b9" stroke-width="2"/>
+<path d="M216 178H265V242H216Z M432 175H479V240H432Z" fill="url(#dots)" stroke="#819999"/>
+<path d="M226 120V112H270V120M427 118V105H459V119" fill="#e2d9b9" stroke-width="3"/>
+<path d="M315 129L331 96H384L397 128Z" fill="#e2d9b9"/><rect x="335" y="105" width="37" height="14" rx="3" fill="#384f56"/>
+<circle cx="352" cy="184" r="79" fill="#779495" stroke-width="4"/><circle cx="351" cy="189" r="71" fill="#344f57" stroke-width="4"/>
+<circle cx="351" cy="189" r="64" fill="none" stroke="#b2c2b4" stroke-width="1.4"/><circle cx="351" cy="189" r="60" fill="none" stroke="#b2c2b4" stroke-width="1.4"/><circle cx="351" cy="189" r="56" fill="none" stroke="#b2c2b4" stroke-width="1.4"/><circle cx="351" cy="189" r="51" fill="none" stroke="#b2c2b4" stroke-width="1.4"/><circle cx="351" cy="189" r="46" fill="none" stroke="#b2c2b4" stroke-width="1.4"/>
+<circle cx="351" cy="189" r="39" fill="#102d39"/><path d="M321 179Q342 144 374 169Q345 163 329 189Z" stroke="none" fill="#89c3ba"/>
+<circle cx="363" cy="201" r="8" fill="#6d9c99" stroke="none"/><rect x="439" y="141" width="28" height="13" rx="3" fill="#57747b"/>
+</g><path d="M123 130H176L200 147M513 202L554 180H604" fill="none" stroke="#243e45"/><circle cx="123" cy="130" r="3" fill="#243e45"/>
+<g font-family="sans-serif" font-size="11" fill="#243e45" letter-spacing="2"><text x="38" y="43">P08   /   COLLECTION</text><text x="682" y="43" text-anchor="end">PL. 01</text><text x="38" y="322">OPTICS   /   SERIES A</text><text x="682" y="322" text-anchor="end">FIG. 01</text></g></svg>

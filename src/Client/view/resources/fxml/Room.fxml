@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.controller.RoomController">
+  <top><HBox alignment="CENTER_LEFT" spacing="20" styleClass="masthead">
+    <Label text="PHIÊN   /   08" styleClass="wordmark"/><Separator orientation="VERTICAL"/><Label text="SÀN ĐẤU GIÁ" styleClass="folio"/>
+    <Region HBox.hgrow="ALWAYS"/><Label fx:id="identity"/><Button fx:id="accountButton" text="Tài khoản &amp; ví" onAction="#openAccount"/><Button text="Video hướng dẫn" onAction="#guide"/><Button text="Đăng xuất" onAction="#logout"/>
+  </HBox></top>
+  <center><SplitPane dividerPositions="0.47">
+    <VBox spacing="12" styleClass="catalog">
+      <Label text="01     /     DANH MỤC" styleClass="eyebrow"/>
+      <Label text="Sổ phiên đấu" styleClass="section-title"/>
+      <HBox spacing="8"><Label fx:id="liveCount" styleClass="stat-chip"/><Label fx:id="watchCount" styleClass="stat-chip"/></HBox>
+      <TextField fx:id="search" promptText="Tìm theo sản phẩm hoặc người bán" accessibleText="Tìm phiên đấu"/>
+      <FlowPane hgap="8" vgap="6"><ComboBox fx:id="filter" accessibleText="Lọc trạng thái"/><ComboBox fx:id="category" accessibleText="Lọc phân loại"/>
+        <Button fx:id="create" text="Đăng sản phẩm" onAction="#createLot" styleClass="primary"/></FlowPane>
+      <HBox spacing="16"><CheckBox fx:id="own" text="Của tôi"/><CheckBox fx:id="savedOnly" text="Đang theo dõi"/></HBox>
+      <TableView fx:id="table" minHeight="85" VBox.vgrow="ALWAYS" accessibleText="Danh sách phiên đấu"/>
+      <Label fx:id="count" styleClass="folio"/>
+      <StackPane fx:id="pictureFrame" minHeight="124" prefHeight="178" maxHeight="200" styleClass="picture-mat">
+        <ImageView fx:id="picture" preserveRatio="true" smooth="true"/>
+      </StackPane>
+      <HBox alignment="CENTER_LEFT" spacing="8"><Label fx:id="pictureCaption" styleClass="folio" wrapText="true"/><Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="zoom" text="Xem ảnh lớn" onAction="#openPicture" styleClass="suggestion"/></HBox>
+    </VBox>
+    <ScrollPane fx:id="detailScroll" fitToWidth="true"><VBox spacing="12" styleClass="detail">
+      <HBox alignment="CENTER_LEFT" spacing="10"><Label text="02     /     CHI TIẾT PHIÊN" styleClass="eyebrow"/>
+        <Region HBox.hgrow="ALWAYS"/><Button fx:id="follow" text="Theo dõi" onAction="#toggleWatch"/></HBox>
+      <Label fx:id="title" wrapText="true" styleClass="section-title"/>
+      <Label fx:id="meta" wrapText="true" styleClass="folio"/>
+      <Label fx:id="description" wrapText="true"/>
+      <VBox spacing="6" styleClass="quote"><Label text="GIÁ HIỆN TẠI" styleClass="eyebrow"/><Label fx:id="price" styleClass="price"/><Label fx:id="leader" wrapText="true"/></VBox>
+      <Label fx:id="clockLabel" styleClass="deadline"/><Label fx:id="times" wrapText="true" styleClass="muted"/>
+      <VBox fx:id="bidBox" spacing="8">
+        <Label text="Mức giá của bạn (₫)" labelFor="$amount"/>
+        <HBox spacing="8"><TextField fx:id="amount" HBox.hgrow="ALWAYS" promptText="Nhập số tiền" onAction="#placeBid"/>
+        <Button fx:id="bidButton" text="Đặt giá" onAction="#placeBid" styleClass="primary"/></HBox>
+        <FlowPane hgap="6" vgap="4"><Label text="Điền nhanh" styleClass="folio"/>
+          <Button text="+10.000 ₫" userData="10000" onAction="#suggestBid" styleClass="suggestion"/>
+          <Button text="+50.000 ₫" userData="50000" onAction="#suggestBid" styleClass="suggestion"/>
+          <Button text="+100.000 ₫" userData="100000" onAction="#suggestBid" styleClass="suggestion"/></FlowPane>
+        <TitledPane text="Đấu giá tự động" expanded="false" animated="false"><VBox spacing="8">
+          <Label text="Giá tối đa (₫)" labelFor="$maximum"/><TextField fx:id="maximum"/>
+          <Label text="Bước giá (₫)" labelFor="$increment"/><TextField fx:id="increment"/>
+          <FlowPane hgap="8" vgap="8"><Button text="Lưu quy tắc" onAction="#autoBid"/>
+            <Button text="Xem quy tắc" onAction="#viewRule"/><Button text="Tắt tự động" onAction="#disableAuto"/></FlowPane></VBox></TitledPane>
+      </VBox>
+      <FlowPane hgap="8" vgap="8"><Button fx:id="edit" text="Sửa sản phẩm" onAction="#editLot"/><Button fx:id="remove" text="Xóa sản phẩm" onAction="#deleteLot"/>
+        <Button fx:id="finish" text="Đóng phiên" onAction="#finishLot"/><Button fx:id="cancel" text="Hủy phiên" onAction="#cancelLot"/>
+        <Button fx:id="pay" text="Thanh toán từ ví" onAction="#payLot" styleClass="primary"/></FlowPane>
+      <Label text="Diễn biến giá" styleClass="heading"/>
+      <LineChart fx:id="chart" animated="false" legendVisible="false" minHeight="180" prefHeight="210" maxHeight="245">
+        <xAxis><NumberAxis fx:id="timeAxis" forceZeroInRange="false" label="Thời gian"/></xAxis>
+        <yAxis><NumberAxis forceZeroInRange="false" label="Giá (₫)"/></yAxis>
+      </LineChart>
+      <HBox spacing="12" alignment="CENTER_LEFT"><Label text="Lịch sử đặt giá" styleClass="heading"/><Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="export" text="Xuất JSON" onAction="#exportHistory"/></HBox><ListView fx:id="history" prefHeight="130"/>
+    </VBox></ScrollPane>
+  </SplitPane></center>
+  <bottom><Label fx:id="notice" maxWidth="Infinity" wrapText="true" styleClass="statusbar"/></bottom>
+</BorderPane>
