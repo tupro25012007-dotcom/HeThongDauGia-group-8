@@ -14,6 +14,11 @@ public class Art extends Item {
         this.artist = artist.trim();
         this.material = material.trim();
     }
+    public Art(String id, String name, String description, BigDecimal price, Seller seller, String artist, String material) {
+        super(id, name, description, price, seller); this.artist = artist; this.material = material;
+    }
+    public String getArtist() { return artist; }
+    public String getMaterial() { return material; }
     @Override
     public void printInfo() {
         System.out.println("Tác phẩm nghệ thuật: " + getName());

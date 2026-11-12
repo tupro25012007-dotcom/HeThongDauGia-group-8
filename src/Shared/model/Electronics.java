@@ -19,6 +19,13 @@ public class Electronics extends Item {
         this.model = model.trim();
         this.warrantyMonths = warrantyMonths;
     }
+    public Electronics(String id, String name, String description, BigDecimal price, Seller seller, String brand, String model, int warrantyMonths) {
+        super(id, name, description, price, seller);
+        this.brand = brand; this.model = model; this.warrantyMonths = warrantyMonths;
+    }
+    public String getBrand() { return brand; }
+    public String getModel() { return model; }
+    public int getWarrantyMonths() { return warrantyMonths; }
     @Override
     public void printInfo() {
         System.out.println("Đồ điện tử " + getName());

@@ -3,15 +3,15 @@ import java.math.BigDecimal;
 import java.util.Locale;
 public final class ItemFactory {
     private ItemFactory() {}
-    public static Item createItem(String type, String name, String description, BigDecimal startingPrice, Seller seller, String... details) {
+    public static Item createItem(String type, String name, String description, BigDecimal startingPrice, Seller seller, String... details) { // String... nhận số lượng chuỗi thay đổi nhưng bên trong xem như mảng String[]
         if (type == null || type.isBlank()) {
             throw new IllegalArgumentException("Loại sản phẩm không được để trống");
         }
         String normalizedType = type.trim().toUpperCase(Locale.ROOT);
         return switch(normalizedType) {
-            case "Electronics" -> createElectronics(name, description, startingPrice, seller, details);
-            case "Art" -> createArt(name, description, startingPrice, seller, details);
-            case "Vehicle" -> createVehicle(name, description, startingPrice, seller, details);
+            case "ELECTRONICS" -> createElectronics(name, description, startingPrice, seller, details);
+            case "ART" -> createArt(name, description, startingPrice, seller, details);
+            case "VEHICLE" -> createVehicle(name, description, startingPrice, seller, details);
             default -> throw new IllegalArgumentException("Loại sản phẩm không được hỗ trợ: " + type);
         };
     }

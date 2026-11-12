@@ -19,6 +19,12 @@ public class Vehicle extends Item {
         this.model = model.trim();
         this.year = year;
     }
+    public Vehicle(String id, String name, String description, BigDecimal price, Seller seller, String manufacturer, String model, int year) {
+        super(id, name, description, price, seller); this.manufacturer = manufacturer; this.model = model; this.year = year;
+    }
+    public String getManufacturer() { return manufacturer; }
+    public String getModel() { return model; }
+    public int getYear() { return year; }
     @Override
     public void printInfo() {
         System.out.println("Phương tiện: " + getName());
